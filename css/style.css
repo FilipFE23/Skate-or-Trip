@@ -25,6 +25,10 @@
   flex-wrap: wrap;
 }
 
+.hidden {
+  display: none;
+}
+
 .box {
   display: flex;
   flex-direction: column;
@@ -35,8 +39,6 @@
 nav {
   border-bottom: solid black 2px;
   text-align: center;
-
-  border-top: solid black 2px;
 }
 
 
