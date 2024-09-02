@@ -36,6 +36,14 @@
   width: 50%;
 }
 
+.child {}
+
+.box:hover .child {
+  transform: scale(1.1);
+  padding: 3%;
+
+}
+
 nav {
   border-bottom: solid black 2px;
   text-align: center;
