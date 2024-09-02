@@ -3,7 +3,9 @@
 
 
 let container = document.getElementById("main-container");
+let counter = document.getElementById("number");
 
+let count = 0;
 
 function boxes(title, desc, image, price) {
   let box = document.createElement("div");
@@ -21,7 +23,33 @@ function boxes(title, desc, image, price) {
   imgEl.src = image;
   priceEl.innerText = price
 
-  box.append(imgEl, h2El, pEl, priceEl);
+  let buyButton = document.createElement("button");
+  buyButton.innerText = "add to cart";
+
+  let regretBuyButton = document.createElement("button");
+  regretBuyButton.innerText = "remove from cart";
+
+  buyButton.classList.add("buy");
+  regretBuyButton.classList.add("buy");
+  regretBuyButton.style.display = "none";
+
+  buyButton.addEventListener("click", ()=> {
+    count++;
+    counter.innerText = count;
+    buyButton.disabled = true;
+    regretBuyButton.style.display = "block";
+  });
+
+  regretBuyButton.addEventListener("click", ()=>{
+    if (count > 0){
+    count--;
+    counter.innerText = count;
+    regretBuyButton.style.display = "none";
+    buyButton.disabled = false;
+    }
+  });
+
+  box.append(imgEl, h2El, pEl, priceEl, buyButton, regretBuyButton);
   container.append(box);
 
 }
