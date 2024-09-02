@@ -36,6 +36,14 @@
   width: 50%;
 }
 
+.child {}
+
+.box:hover .child {
+  transform: scale(1.1);
+  padding: 3%;
+
+}
+
 nav {
   border-bottom: solid black 2px;
   text-align: center;
@@ -46,4 +54,32 @@ li {
   list-style: none;
   padding: 10px;
   display: inline-block;
+}
+
+#footerUpper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#connect {
+  margin-left: 10%;
+}
+
+#socialMedia {
+  margin-right: 10%;
+}
+
+#socialMedia img {
+  width: 30px;
+
+}
+
+@media (max-width : 600px) {
+  .box {
+    width: 70%;
+    margin-left: auto;
+
+    margin-right: auto;
+  }
 }
