@@ -25,31 +25,16 @@
   flex-wrap: wrap;
 }
 
-
 .hidden {
   display: none;
 }
-
-
 
 .box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
-  margin: 1% 10%;
-
-
+  width: 50%;
 }
-
-.child {}
-
-.box:hover .child {
-  transform: scale(1.1);
-  padding: 3%;
-
-}
-
 
 nav {
   border-bottom: solid black 2px;
