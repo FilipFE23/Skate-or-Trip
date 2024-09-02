@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#logout {
+  float: right;
+  margin-right: 5%;
+}
+
+#logout ul {
+  list-style: none;
+}
