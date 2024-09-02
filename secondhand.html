@@ -4,20 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <script type="module" src="./js/button.js" defer></script>
 </head>
 <body>
-    <div>
+    <header>
+        <h1 id="title">Brand name</h1>
+        <div>
+          <nav>
+            <ul>
+              <li>category</li>
+              <li>category</li>
+              <li>category</li>
+              <li>category</li>
+              <li>category</li>
+              <li>category</li>
+              <li><a href="contact.html"> Contact</a></li>
+              <li><a href="secondhand.html"> secondhand</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <div class="form">
         <h2>Contact us!</h2>
         <p>Description of how to sell secondhand</p>
         <div>
-          <label for="secondhandseller">Name:</label>
+          <label for="secondhandseller">Email:</label>
           <input type="text" id="secondhandseller" name="secondhandseller" required>
         </div>
         <div>
           <label for="itemSecondHand">Item:</label>
-          <input type="text" id="itemSecondHand">
+          <input type="text" id="itemSecondHand" placeholder="drag picture or upload">
         </div>
-        <button>Submit</button>
+        <button id="submitbutt">Submit</button>
       </div>
+      <div id="displayArea"></div>
 </body>
 </html>

@@ -47,3 +47,29 @@ li {
   padding: 10px;
   display: inline-block;
 }
+.form{
+max-width: 300px; /* Adjust the max-width of the form */
+margin: auto;
+padding: 20px; /* Add padding for spacing inside the form */
+border-radius: 5px; /* Rounded corners */
+}
+
+#message{
+  width: 100%;
+  padding: 8px; /* Adjust padding for input fields */
+  box-sizing: border-box;
+  font-size: 40px;
+}
+
+#itemSecondHand{
+  padding: 8px; /* Adjust padding for input fields */
+  box-sizing: border-box;
+  font-size: 25px;
+  height: 250px;
+}
+
+#displayArea{
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}
