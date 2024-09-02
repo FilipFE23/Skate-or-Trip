@@ -11,14 +11,20 @@
   margin-top: 40px;
 }
 
+nav {
+  border-bottom: solid black 2px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
 #logout {
   display: flex;
   flex-direction: row-reverse;
-  margin-right: 5%;
 }
 
 #logout ul {
   list-style: none;
+  margin-right: 5%;
 }
 
 #imgDiv {
