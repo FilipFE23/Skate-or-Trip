@@ -38,6 +38,7 @@ function boxes(title, desc, image, price) {
     counter.innerText = count;
     buyButton.disabled = true;
     regretBuyButton.style.display = "block";
+    alert("Product added to cart!")
   });
 
   regretBuyButton.addEventListener("click", ()=>{
