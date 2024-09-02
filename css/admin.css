@@ -12,10 +12,28 @@
 }
 
 #logout {
-  float: right;
+  display: flex;
+  flex-direction: row-reverse;
   margin-right: 5%;
 }
 
 #logout ul {
   list-style: none;
+}
+
+#imgDiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+.imgContainer {
+  width: 290px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.productImages {
+  height: 290px; 
+  border-radius: 10%;
 }
