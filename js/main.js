@@ -1,5 +1,51 @@
 //////////////////////////// YASIR & André/////////////////////////////////////
 
+let inStock = [
+  {
+    item: "skateboard",
+    gender: "men",
+    name: "Skateboard Pro Xtreme",
+    description:
+      "The Skateboard Pro Xtreme is the ultimate skateboard designed for riders of all skill levels, from beginners to seasoned pros. Built with high-quality materials and engineered for superior performance, this skateboard is perfect for those looking to enhance their skills and enjoy a smooth ride.",
+    price: "80$",
+    img: "./images/Rip-N-Dip-Psychedelic-Complete-Skateboard-Multi-3.jpg",
+  },
+  {
+    item: "skateboard",
+    gender: "women",
+    name: "Longboard Classic Wave Rider",
+    description:
+      "Discover the freedom of surfing the streets with the Longboard Classic Wave Rider - the perfect board for downhill racing, carving, and long-distance cruising. Crafted for stability and smoothness, this longboard is ideal for both novice and experienced riders looking for an exhilarating ride.",
+    price: "70$",
+    img: "./images/krooked-skateboards-sebo-walker-waves-skateboard-deck-8-25-p46621-115949_medium.jpg",
+  },
+  {
+    item: "skateboard",
+    gender: "kids",
+    name: "Cruiser Skateboard Urban Glide",
+    description:
+      "Meet the Cruiser Skateboard Urban Glide - your perfect companion for cruising the streets and commuting in style. Designed for a smooth, effortless ride, this cruiser skateboard is ideal for both beginners and experienced skaters looking for a versatile board that excels in both comfort and performance.",
+    price: "90$",
+    img: "./images/skateboard.jpg",
+  },
+  {
+    item: "shoes",
+    gender: "women",
+    name: "",
+    description: "",
+    price: "65$",
+    img: "./images/vans.jpeg",
+  },
+  {
+    item: "hoodie",
+    gender: "men",
+    name: "",
+    description: "",
+    price: "40$",
+    img: "./images/stoney.jpeg",
+  },
+];
+
 let container = document.getElementById("main-container");
 let counter = document.getElementById("number");
 
@@ -71,60 +117,64 @@ function boxes(title, desc, image, price) {
   container.append(box);
 }
 
-let firstTitle = "Skateboard Pro Xtreme";
-let firstDescription =
-  "The Skateboard Pro Xtreme is the ultimate skateboard designed for riders of all skill levels, from beginners to seasoned pros. Built with high-quality materials and engineered for superior performance, this skateboard is perfect for those looking to enhance their skills and enjoy a smooth ride.";
-let firstImage =
-  "./images/Rip-N-Dip-Psychedelic-Complete-Skateboard-Multi-3.jpg";
-let firstPrice = "80$";
+// let firstTitle = "Skateboard Pro Xtreme";
+// let firstDescription = "The Skateboard Pro Xtreme is the ultimate skateboard designed for riders of all skill levels, from beginners to seasoned pros. Built with high-quality materials and engineered for superior performance, this skateboard is perfect for those looking to enhance their skills and enjoy a smooth ride.";
+// let firstImage = "./images/Rip-N-Dip-Psychedelic-Complete-Skateboard-Multi-3.jpg";
+// let firstPrice = "80$";
 
-let secondTitle = "Cruiser Skateboard Urban Glide";
-let secondDescription =
-  "Meet the Cruiser Skateboard Urban Glide – your perfect companion for cruising the streets and commuting in style. Designed for a smooth, effortless ride, this cruiser skateboard is ideal for both beginners and experienced skaters looking for a versatile board that excels in both comfort and performance.";
-let secondImage = "./images/skateboard.jpg";
-let secondPrice = "90$";
+// let secondTitle = "Cruiser Skateboard Urban Glide";
+// let secondDescription = "Meet the Cruiser Skateboard Urban Glide – your perfect companion for cruising the streets and commuting in style. Designed for a smooth, effortless ride, this cruiser skateboard is ideal for both beginners and experienced skaters looking for a versatile board that excels in both comfort and performance.";
+// let secondImage = "./images/skateboard.jpg";
+// let secondPrice = "90$";
 
 ///...
 
-let seveenthTitle = "Longboard Classic Wave Rider";
-let seveenthDescription =
-  "Discover the freedom of surfing the streets with the Longboard Classic Wave Rider – the perfect board for downhill racing, carving, and long-distance cruising. Crafted for stability and smoothness, this longboard is ideal for both novice and experienced riders looking for an exhilarating ride.";
-let seveenthImage =
-  "./images/krooked-skateboards-sebo-walker-waves-skateboard-deck-8-25-p46621-115949_medium.jpg";
-let seveenthPrice = "70$";
+// let seveenthTitle = "Longboard Classic Wave Rider";
+// let seveenthDescription = "Discover the freedom of surfing the streets with the Longboard Classic Wave Rider – the perfect board for downhill racing, carving, and long-distance cruising. Crafted for stability and smoothness, this longboard is ideal for both novice and experienced riders looking for an exhilarating ride.";
+// let seveenthImage = "./images/krooked-skateboards-sebo-walker-waves-skateboard-deck-8-25-p46621-115949_medium.jpg";
+// let seveenthPrice = "70$";
 
 //bilderna bara för exempel
 
-for (let i = 0; i < 10; i++) {
-  if (i <= 2) {
-    boxes(firstTitle, firstDescription, firstImage, firstPrice);
-  } else if ((i > 2, i < 6)) {
-    boxes(secondTitle, secondDescription, secondImage, secondPrice);
-  } else {
-    boxes(seveenthTitle, seveenthDescription, seveenthImage, seveenthPrice);
+function displayStock(gender, item) {
+  container.innerHTML = "";
+  for (let i = 0; i < 10 && i < inStock.length; i++) {
+    if (
+      (!gender || inStock[i].gender === gender) &&
+      (!item || inStock[i].item === item)
+    ) {
+      boxes(
+        inStock[i].name,
+        inStock[i].description,
+        inStock[i].img,
+        inStock[i].price
+      );
+    }
   }
 }
+
+displayStock();
+
+// document.getElementById('men').addEventListener('click', () => {
+//   displayStock('men');
+// })
+// document.getElementById('women').addEventListener('click', () => {
+//   displayStock('women');
+// })
+// document.getElementById('kids').addEventListener('click', () => {
+//   displayStock('kids');
+// })
+
+// for (let i = 0; i < 10; i++) {
+//   if(inStock[i].category === 'skateboard'){
+//     boxes(inStock[i].name, inStock[i].description, inStock[i].img, inStock[i].price);
+//   }
+// };
 
 //////////////////////////// YASIR /////////////////////////////////////
 
 //////////////////////////// Abdulla /////////////////////////////////////
-const hoverTargets = document.querySelectorAll(".hover-target");
-function createDiv(target) {
-  const newDiv = document.createElement("div");
-  newDiv.className = "created-div";
-  target.appendChild(newDiv);
-  newDiv.classList.add("newDivStyle");
-}
-function removeDiv(target) {
-  const createdDiv = target.querySelector(".created-div");
-  if (createdDiv) {
-    target.removeChild(createdDiv);
-  }
-}
-hoverTargets.forEach((target) => {
-  target.addEventListener("mouseover", () => createDiv(target));
-  target.addEventListener("mouseout", () => removeDiv(target));
-});
+
 //////////////////////////// Abdulla /////////////////////////////////////
 
 //////////////////////////// Johanna /////////////////////////////////////
