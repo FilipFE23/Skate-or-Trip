@@ -29,8 +29,6 @@
   display: none;
 }
 
-.child {}
-
 .box:hover .child {
   transform: scale(1.1);
   padding: 3%;
