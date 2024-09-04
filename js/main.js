@@ -174,7 +174,23 @@ displayStock();
 //////////////////////////// YASIR /////////////////////////////////////
 
 //////////////////////////// Abdulla /////////////////////////////////////
-
+const hoverTargets = document.querySelectorAll(".hover-target");
+function createDiv(target) {
+  const newDiv = document.createElement("div");
+  newDiv.className = "created-div";
+  target.appendChild(newDiv);
+  newDiv.classList.add("newDivStyle");
+}
+function removeDiv(target) {
+  const createdDiv = target.querySelector(".created-div");
+  if (createdDiv) {
+    target.removeChild(createdDiv);
+  }
+}
+hoverTargets.forEach((target) => {
+  target.addEventListener("mouseover", () => createDiv(target));
+  target.addEventListener("mouseout", () => removeDiv(target));
+});
 //////////////////////////// Abdulla /////////////////////////////////////
 
 //////////////////////////// Johanna /////////////////////////////////////
