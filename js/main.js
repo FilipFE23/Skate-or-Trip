@@ -1,6 +1,4 @@
-
 //////////////////////////// YASIR & André/////////////////////////////////////
-
 
 let container = document.getElementById("main-container");
 let counter = document.getElementById("number");
@@ -21,7 +19,7 @@ function boxes(title, desc, image, price) {
   h2El.innerText = title;
   pEl.innerText = desc;
   imgEl.src = image;
-  priceEl.innerText = price
+  priceEl.innerText = price;
 
   let buyButton = document.createElement("button");
   buyButton.innerText = "add to cart";
@@ -35,7 +33,7 @@ function boxes(title, desc, image, price) {
   regretBuyButton.classList.add("buy");
   regretBuyButton.style.display = "none";
 
-  buyButton.addEventListener("click", ()=> {
+  buyButton.addEventListener("click", () => {
     count++;
     counter.innerText = count;
     buyButton.disabled = true;
@@ -43,7 +41,7 @@ function boxes(title, desc, image, price) {
     timedMessage();
   });
 
-  function timedMessage(){
+  function timedMessage() {
     purchaseMessage.innerText = "Product added to cart!";
     purchaseMessage.style.display = "block";
 
@@ -52,94 +50,91 @@ function boxes(title, desc, image, price) {
     }, 1000);
   }
 
-  regretBuyButton.addEventListener("click", ()=>{
-    if (count > 0){
-    count--;
-    counter.innerText = count;
-    regretBuyButton.style.display = "none";
-    buyButton.disabled = false;
+  regretBuyButton.addEventListener("click", () => {
+    if (count > 0) {
+      count--;
+      counter.innerText = count;
+      regretBuyButton.style.display = "none";
+      buyButton.disabled = false;
     }
   });
 
-  box.append(imgEl, h2El, pEl, priceEl, buyButton, regretBuyButton, purchaseMessage);
+  box.append(
+    imgEl,
+    h2El,
+    pEl,
+    priceEl,
+    buyButton,
+    regretBuyButton,
+    purchaseMessage
+  );
   container.append(box);
-
 }
 
 let firstTitle = "Skateboard Pro Xtreme";
-let firstDescription = "The Skateboard Pro Xtreme is the ultimate skateboard designed for riders of all skill levels, from beginners to seasoned pros. Built with high-quality materials and engineered for superior performance, this skateboard is perfect for those looking to enhance their skills and enjoy a smooth ride.";
-let firstImage = "./images/Rip-N-Dip-Psychedelic-Complete-Skateboard-Multi-3.jpg";
+let firstDescription =
+  "The Skateboard Pro Xtreme is the ultimate skateboard designed for riders of all skill levels, from beginners to seasoned pros. Built with high-quality materials and engineered for superior performance, this skateboard is perfect for those looking to enhance their skills and enjoy a smooth ride.";
+let firstImage =
+  "./images/Rip-N-Dip-Psychedelic-Complete-Skateboard-Multi-3.jpg";
 let firstPrice = "80$";
 
 let secondTitle = "Cruiser Skateboard Urban Glide";
-let secondDescription = "Meet the Cruiser Skateboard Urban Glide – your perfect companion for cruising the streets and commuting in style. Designed for a smooth, effortless ride, this cruiser skateboard is ideal for both beginners and experienced skaters looking for a versatile board that excels in both comfort and performance.";
+let secondDescription =
+  "Meet the Cruiser Skateboard Urban Glide – your perfect companion for cruising the streets and commuting in style. Designed for a smooth, effortless ride, this cruiser skateboard is ideal for both beginners and experienced skaters looking for a versatile board that excels in both comfort and performance.";
 let secondImage = "./images/skateboard.jpg";
 let secondPrice = "90$";
 
 ///...
 
 let seveenthTitle = "Longboard Classic Wave Rider";
-let seveenthDescription = "Discover the freedom of surfing the streets with the Longboard Classic Wave Rider – the perfect board for downhill racing, carving, and long-distance cruising. Crafted for stability and smoothness, this longboard is ideal for both novice and experienced riders looking for an exhilarating ride.";
-let seveenthImage = "./images/krooked-skateboards-sebo-walker-waves-skateboard-deck-8-25-p46621-115949_medium.jpg";
+let seveenthDescription =
+  "Discover the freedom of surfing the streets with the Longboard Classic Wave Rider – the perfect board for downhill racing, carving, and long-distance cruising. Crafted for stability and smoothness, this longboard is ideal for both novice and experienced riders looking for an exhilarating ride.";
+let seveenthImage =
+  "./images/krooked-skateboards-sebo-walker-waves-skateboard-deck-8-25-p46621-115949_medium.jpg";
 let seveenthPrice = "70$";
 
 //bilderna bara för exempel
 
 for (let i = 0; i < 10; i++) {
-  if(i <= 2){
-        boxes(firstTitle, firstDescription, firstImage, firstPrice);
-  }else if(i > 2, i < 6){
+  if (i <= 2) {
+    boxes(firstTitle, firstDescription, firstImage, firstPrice);
+  } else if ((i > 2, i < 6)) {
     boxes(secondTitle, secondDescription, secondImage, secondPrice);
-  }else{
+  } else {
     boxes(seveenthTitle, seveenthDescription, seveenthImage, seveenthPrice);
   }
-
 }
-
 
 //////////////////////////// YASIR /////////////////////////////////////
 
-
-
 //////////////////////////// Abdulla /////////////////////////////////////
-
-
-
-
-
+const hoverTargets = document.querySelectorAll(".hover-target");
+function createDiv(target) {
+  const newDiv = document.createElement("div");
+  newDiv.className = "created-div";
+  target.appendChild(newDiv);
+  newDiv.classList.add("newDivStyle");
+}
+function removeDiv(target) {
+  const createdDiv = target.querySelector(".created-div");
+  if (createdDiv) {
+    target.removeChild(createdDiv);
+  }
+}
+hoverTargets.forEach((target) => {
+  target.addEventListener("mouseover", () => createDiv(target));
+  target.addEventListener("mouseout", () => removeDiv(target));
+});
 //////////////////////////// Abdulla /////////////////////////////////////
-
-
-
 
 //////////////////////////// Johanna /////////////////////////////////////
 
-
-
-
-
 //////////////////////////// Johanna /////////////////////////////////////
 
-
-
-
 //////////////////////////// Filip /////////////////////////////////////
 
-
-
-
-
-
 //////////////////////////// Filip /////////////////////////////////////
-
-
-
-
 
 //////////////////////////// Andre /////////////////////////////////////
-
-
-
-
 
 //////////////////////////// Andre /////////////////////////////////////
