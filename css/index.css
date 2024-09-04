@@ -83,3 +83,9 @@ li {
     margin-right: auto;
   }
 }
+
+.purchase {
+  display: none;
+  background-color: red;
+  color: white;
+}
