@@ -54,6 +54,10 @@ let inStock = [
   },
 ];
 
+let menuMen = document.getElementById('men-menu');
+let menuWomen = document.getElementById('women-menu');
+let menuKids = document.getElementById('kids-menu');
+
 let container = document.getElementById("main-container");
 let counter = document.getElementById("number");
 
@@ -162,6 +166,16 @@ function displayStock(gender, item) {
 }
 
 displayStock();
+
+menuMen.addEventListener('click', () => {
+  displayStock('men');
+})
+menuWomen.addEventListener('click', () => {
+  displayStock('women');
+})
+menuKids.addEventListener('click', () => {
+  displayStock('kids');
+})
 
 // document.getElementById('men').addEventListener('click', () => {
 //   displayStock('men');
