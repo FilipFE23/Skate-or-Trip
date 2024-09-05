@@ -202,6 +202,7 @@ function createDiv(target) {
   newDiv.className = "created-div";
   target.appendChild(newDiv);
   newDiv.classList.add("newDivStyle");
+  newDiv
 }
 function removeDiv(target) {
   const createdDiv = target.querySelector(".created-div");
