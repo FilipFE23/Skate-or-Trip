@@ -80,16 +80,16 @@ a {
 
 .newDivStyle {
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    background-color: #ffffff;
-    left: 125px;
-    height: 35%;
-    width: 80%;
-    z-index: 3;
-    border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: #ffffff;
+  left: 125px;
+  height: 35%;
+  width: 80%;
+  z-index: 3;
+  border-radius: 5px;
 }
 
 #main-container {
@@ -217,10 +217,20 @@ a {
     width: 30px;
   }
 
-  #menu-div p {
-    display: none;
+  #menu-div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 4;
+
   }
 
+  #menu-div p {
+    display: none;
+    background-color: #ffffff;
+    width: 100%;
+
+  }
 
 
 

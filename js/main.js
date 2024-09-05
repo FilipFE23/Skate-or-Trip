@@ -63,12 +63,21 @@ let container = document.getElementById("main-container");
 let counter = document.getElementById("number");
 let dropDown = document.getElementById("dropdown");
 let close = document.getElementById("close");
+let menuDiv = document.getElementById("menu-div");
 
 
+let test = menuDiv.children[0];
 
 dropDown.addEventListener("click", () => {
   dropDown.style.display = "none";
   close.style.display = "block"
+  close.style.marginTop = "125px";
+
+
+  for (let i = 8; i > 0; i--) {
+    menuDiv.children[i].style.display = "block";
+
+  }
 
 });
 
@@ -76,6 +85,10 @@ dropDown.addEventListener("click", () => {
 close.addEventListener("click", () => {
   dropDown.style.display = "block";
   close.style.display = "none"
+  for (let i = 8; i > 0; i--) {
+    menuDiv.children[i].style.display = "none";
+
+  }
 });
 
 
@@ -100,14 +113,14 @@ function boxes(title, desc, image, price) {
   let addButton = document.createElement("button");
   addButton.innerHTML = "Yes";
 
-  addButton.addEventListener("click", ()=>{
+  addButton.addEventListener("click", () => {
     purchaseMessage.style.display = "none";
   });
 
   let addNotButton = document.createElement("button");
   addNotButton.innerHTML = "No";
 
-  addNotButton.addEventListener("click", ()=>{
+  addNotButton.addEventListener("click", () => {
     purchaseMessage.style.display = "none";
   })
 
@@ -133,31 +146,31 @@ function boxes(title, desc, image, price) {
 
   function timedMessage(addedImage) {
     let otherProducts = inStock.filter(product => product.img !== addedImage);
-  
+
     let randomProduct = otherProducts[Math.floor(Math.random() * otherProducts.length)];
-  
+
     purchaseMessage.innerHTML = "";
 
     let addQuestion = document.createElement("p");
     addQuestion.innerText = "Do you want to add this product?";
-    
+
     let imgEl = document.createElement("img");
     imgEl.classList.add("popup-img");
     imgEl.src = randomProduct.img;
-  
+
     let h2El = document.createElement("h2");
     h2El.innerHTML = randomProduct.name;
-  
+
     purchaseMessage.append(imgEl);
     purchaseMessage.append(h2El);
     purchaseMessage.append(addQuestion);
-  
+
     purchaseMessage.append(addButton);
     purchaseMessage.append(addNotButton);
-  
+
     purchaseMessage.style.display = "block";
   }
-  
+
   regretBuyButton.addEventListener("click", () => {
     if (count > 0) {
       count--;
