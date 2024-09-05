@@ -80,3 +80,40 @@ li {
   justify-content: center;
   font-size: large;
 }
+
+#men-menu {
+  cursor: pointer;
+
+}
+
+#women-menu {
+  cursor: pointer;
+}
+
+#kids-menu {
+  cursor: pointer;
+}
+
+#sale-menu {
+  color: red;
+  cursor: pointer;
+}
+
+#brands-menu {
+  cursor: pointer;
+}
+
+#skateboards-menu {
+  cursor: pointer;
+}
+
+.created-div {
+  display: none;
+}
+
+.newDivStyle {
+  display: flex;
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+}
