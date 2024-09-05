@@ -58,8 +58,26 @@ let menuMen = document.getElementById('men-menu');
 let menuWomen = document.getElementById('women-menu');
 let menuKids = document.getElementById('kids-menu');
 
+
 let container = document.getElementById("main-container");
 let counter = document.getElementById("number");
+let dropDown = document.getElementById("dropdown");
+let close = document.getElementById("close");
+
+
+
+dropDown.addEventListener("click", () => {
+  dropDown.style.display = "none";
+  close.style.display = "block"
+
+});
+
+
+close.addEventListener("click", () => {
+  dropDown.style.display = "block";
+  close.style.display = "none"
+});
+
 
 let count = 0;
 
@@ -231,9 +249,25 @@ menuKids.addEventListener('click', () => {
 const hoverTargets = document.querySelectorAll(".hover-target");
 function createDiv(target) {
   const newDiv = document.createElement("div");
+  const tshirtP = document.createElement('p')
+  const jeansP = document.createElement('p')
+  const hoodiesP = document.createElement('p')
+  const beaniesP = document.createElement('p')
+  const kepsarP = document.createElement('p')
+  const sneakersP = document.createElement('p')
+
+  newDiv.append(tshirtP, jeansP, hoodiesP, beaniesP, kepsarP, sneakersP)
+
+  tshirtP.textContent = 'T-shirts';
+  jeansP.textContent = 'Jeans';
+  hoodiesP.textContent = 'Hoodies';
+  beaniesP.textContent = 'Beanies';
+  kepsarP.textContent = 'Kepsar';
+  sneakersP.textContent = 'Sneakers';
+
   newDiv.className = "created-div";
-  target.appendChild(newDiv);
   newDiv.classList.add("newDivStyle");
+  target.appendChild(newDiv);
 }
 function removeDiv(target) {
   const createdDiv = target.querySelector(".created-div");

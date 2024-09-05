@@ -79,10 +79,17 @@ a {
 }
 
 .newDivStyle {
-  display: flex;
-  background-color: blue;
-  height: 100px;
-  width: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #ffffff;
+    left: 125px;
+    height: 35%;
+    width: 80%;
+    z-index: 3;
+    border-radius: 5px;
 }
 
 #main-container {
@@ -158,6 +165,37 @@ a {
 #footerUl li {
 
   display: block;
+}
+
+#dropdown {
+  display: none;
+}
+
+#close {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .box {
+    width: 70%;
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  #dropdown {
+    display: block;
+  }
+}
+
+@media (min-width : 600px) {
+  #close {
+    display: none !important;
+  }
+
+  #dropdown {
+    display: none !important;
+  }
 
 }
 
@@ -168,6 +206,25 @@ a {
 
     margin-right: auto;
   }
+
+  #dropdown {
+    display: block;
+    width: 40px;
+  }
+
+  #close {
+    display: none;
+    width: 30px;
+  }
+
+  #menu-div p {
+    display: none;
+  }
+
+
+
+
+
 }
 
 .purchase {
