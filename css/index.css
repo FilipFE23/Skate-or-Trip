@@ -101,14 +101,30 @@ cursor: pointer;
 }
 
 .box:hover .child {
-  transform: scale(1.1);
-  padding: 3%;
+  transform: scale(1.05);
+  margin-top: 3%;
 
 }
 #footerUpper {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+}
+
+#lowerFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#companyInfo {
+  margin-left: 10%;
+  width: 30%;
+}
+
+#contactAndAdress {
+  margin-right: 10%;
+
 }
 
 #connect {
@@ -121,6 +137,12 @@ cursor: pointer;
 
 #socialMedia img {
   width: 30px;
+
+}
+
+#footerUl li {
+
+  display: block;
 
 }
 
