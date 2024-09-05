@@ -60,7 +60,27 @@ let menuKids = document.getElementById('kids-menu');
 
 let container = document.getElementById("main-container");
 let counter = document.getElementById("number");
+let dropDown = document.getElementById("dropdown");
+let close = document.getElementById("close");
 
+
+dropDown.addEventListener("click", () => {
+  dropDown.style.display = "none";
+  close.style.display = "block"
+
+});
+
+
+close.addEventListener("click", () => {
+  dropDown.style.display = "block";
+  close.style.display = "none"
+});
+
+if (window.innerWidth > 600) {
+  dropDown.style.display = "none"
+
+  close.style.display = "none"
+}
 let count = 0;
 
 function boxes(title, desc, image, price) {

@@ -156,6 +156,7 @@ a {
     display: block;
 }
 
+<<<<<<< Updated upstream
 @media (max-width: 600px) {
     .box {
         width: 70%;
@@ -163,6 +164,53 @@ a {
 
         margin-right: auto;
     }
+=======
+#dropdown {
+  display: none;
+}
+
+#close {
+  display: none;
+}
+
+@media (min-width : 600px) {
+  #close {
+    display: none !important;
+  }
+
+  #dropdown {
+    display: none !important;
+  }
+
+}
+
+@media (max-width : 600px) {
+  .box {
+    width: 70%;
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  #dropdown {
+    display: block;
+    width: 40px;
+  }
+
+  #close {
+    display: none;
+    width: 30px;
+  }
+
+  #menu-div p {
+    display: none;
+  }
+
+
+
+
+
+>>>>>>> Stashed changes
 }
 
 .purchase {
