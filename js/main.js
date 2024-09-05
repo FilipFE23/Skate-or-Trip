@@ -58,10 +58,12 @@ let menuMen = document.getElementById('men-menu');
 let menuWomen = document.getElementById('women-menu');
 let menuKids = document.getElementById('kids-menu');
 
+
 let container = document.getElementById("main-container");
 let counter = document.getElementById("number");
 let dropDown = document.getElementById("dropdown");
 let close = document.getElementById("close");
+
 
 
 dropDown.addEventListener("click", () => {
