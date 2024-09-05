@@ -97,6 +97,20 @@ function boxes(title, desc, image, price) {
   imgEl.src = image;
   priceEl.innerText = price;
 
+  let addButton = document.createElement("button");
+  addButton.innerHTML = "Yes";
+
+  addButton.addEventListener("click", ()=>{
+    purchaseMessage.style.display = "none";
+  });
+
+  let addNotButton = document.createElement("button");
+  addNotButton.innerHTML = "No";
+
+  addNotButton.addEventListener("click", ()=>{
+    purchaseMessage.style.display = "none";
+  })
+
   let buyButton = document.createElement("button");
   buyButton.innerText = "add to cart";
 
@@ -114,18 +128,36 @@ function boxes(title, desc, image, price) {
     counter.innerText = count;
     buyButton.disabled = true;
     regretBuyButton.style.display = "block";
-    timedMessage();
+    timedMessage(title, image);
   });
 
-  function timedMessage() {
-    purchaseMessage.innerText = "Product added to cart!";
+  function timedMessage(addedImage) {
+    let otherProducts = inStock.filter(product => product.img !== addedImage);
+  
+    let randomProduct = otherProducts[Math.floor(Math.random() * otherProducts.length)];
+  
+    purchaseMessage.innerHTML = "";
+
+    let addQuestion = document.createElement("p");
+    addQuestion.innerText = "Do you want to add this product?";
+    
+    let imgEl = document.createElement("img");
+    imgEl.classList.add("popup-img");
+    imgEl.src = randomProduct.img;
+  
+    let h2El = document.createElement("h2");
+    h2El.innerHTML = randomProduct.name;
+  
+    purchaseMessage.append(imgEl);
+    purchaseMessage.append(h2El);
+    purchaseMessage.append(addQuestion);
+  
+    purchaseMessage.append(addButton);
+    purchaseMessage.append(addNotButton);
+  
     purchaseMessage.style.display = "block";
-
-    setTimeout(() => {
-      purchaseMessage.style.display = "none";
-    }, 1000);
   }
-
+  
   regretBuyButton.addEventListener("click", () => {
     if (count > 0) {
       count--;
