@@ -78,11 +78,7 @@ close.addEventListener("click", () => {
   close.style.display = "none"
 });
 
-if (window.innerWidth > 600) {
-  dropDown.style.display = "none"
 
-  close.style.display = "none"
-}
 let count = 0;
 
 function boxes(title, desc, image, price) {

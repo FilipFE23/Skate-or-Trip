@@ -1,176 +1,185 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "New Amsterdam", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 header {
-    display: flex;
-    height: 5%;
-    justify-content: center;
-    gap: 5%;
-    width: 96%;
-    margin-left: 2%;
+  display: flex;
+  height: 5%;
+  justify-content: center;
+  gap: 5%;
+  width: 96%;
+  margin-left: 2%;
 }
 
 #menu-div {
-    display: flex;
-    padding: 10px;
-    justify-content: space-around;
-    align-items: center;
-    height: 20%;
-    width: 40%;
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+  height: 20%;
+  width: 40%;
 }
 
 #title {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
 }
 
 #cart {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  cursor: pointer;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 #login-text {
-    position: absolute;
-    top: 20px;
-    right: 100px;
+  position: absolute;
+  top: 20px;
+  right: 100px;
 }
 
 #men-menu {
-    cursor: pointer;
+  cursor: pointer;
+
 }
 
 #women-menu {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #kids-menu {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #sale-menu {
-    color: red;
-    cursor: pointer;
+  color: red;
+  cursor: pointer;
 }
 
 #brands-menu {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #skateboards-menu {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .created-div {
-    display: none;
+  display: none;
 }
 
 .newDivStyle {
-    display: flex;
-    position: absolute;
-    background-color: blue;
-    height: 100px;
-    width: 100px;
+  display: flex;
+  position: absolute;
+  background-color: blue;
+  height: 100px;
+  width: 100px;
 }
 
 #main-container {
-    border-bottom: solid 2px rgba(220, 202, 0, 0.758);
-    border-top: solid 2px rgba(220, 202, 0, 0.758);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 80%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
+  border-bottom: solid 2px rgba(220, 202, 0, 0.758);
+  border-top: solid 2px rgba(220, 202, 0, 0.758);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
 }
 
 .child {
-    max-width: 50%;
+  max-width: 50%;
 }
 
 .box:hover .child {
-    transform: scale(1.05);
-    margin-top: 3%;
+  transform: scale(1.05);
+  margin-top: 3%;
+
 }
 
 #footerUpper {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 #lowerFooter {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 #companyInfo {
-    margin-left: 10%;
-    width: 30%;
+  margin-left: 10%;
+  width: 30%;
 }
 
 #contactAndAdress {
-    margin-right: 10%;
+  margin-right: 10%;
+
 }
 
 #connect {
-    margin-left: 10%;
+  margin-left: 10%;
 }
 
 #socialMedia {
-    margin-right: 10%;
+  margin-right: 10%;
 }
 
 #socialMedia img {
-    width: 30px;
+  width: 30px;
+
 }
 
 #footerUl li {
-    display: block;
+
+  display: block;
 }
 
-<<<<<<< Updated upstream
-@media (max-width: 600px) {
-    .box {
-        width: 70%;
-        margin-left: auto;
-
-        margin-right: auto;
-    }
-=======
 #dropdown {
   display: none;
 }
 
 #close {
   display: none;
+}
+
+@media (max-width: 600px) {
+  .box {
+    width: 70%;
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  #dropdown {
+    display: block;
+  }
 }
 
 @media (min-width : 600px) {
@@ -210,37 +219,37 @@ a {
 
 
 
->>>>>>> Stashed changes
 }
 
 .purchase {
-    display: none;
-    background-color: red;
-    color: white;
+  display: none;
+  background-color: red;
+  color: white;
 }
+
 
 body,
 html {
-    height: 100%;
+  height: 100%;
 }
 
 /* The hero image */
 .hero-image {
-    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(https://img.freepik.com/free-photo/full-shot-man-doing-tricks_23-2148264229.jpg?t=st=1725450364~exp=1725453964~hmac=4cdd7546617c2b99e02901f6d75a776e0013df9714f8d5a5fd55b0a93fbe6387&w=740);
-    height: 70%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://img.freepik.com/free-photo/full-shot-man-doing-tricks_23-2148264229.jpg?t=st=1725450364~exp=1725453964~hmac=4cdd7546617c2b99e02901f6d75a776e0013df9714f8d5a5fd55b0a93fbe6387&w=740);
+  height: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
+
 .hero-text {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgb(0, 0, 0);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
 }
