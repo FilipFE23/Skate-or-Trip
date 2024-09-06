@@ -286,7 +286,7 @@ function removeDiv(target) {
 }
 
 hoverTargets.forEach((target) => {
-  target.addEventListener("mouseover", () => {
+  target.addEventListener("click", () => {
     if (!target.querySelector(".created-div")) {
       createDiv(target);
     }
