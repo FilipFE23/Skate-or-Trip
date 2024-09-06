@@ -197,6 +197,10 @@ a {
     display: none !important;
   }
 
+  #menu-div p {
+    display: inline-block;
+  }
+
 }
 
 @media (max-width : 600px) {
