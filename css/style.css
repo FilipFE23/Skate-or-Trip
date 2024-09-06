@@ -7,8 +7,15 @@
 }
 
 #title {
-  text-align: center;
-  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 #main-container {

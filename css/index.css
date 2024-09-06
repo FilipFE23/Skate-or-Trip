@@ -31,6 +31,10 @@ header {
   height: 10vh;
 }
 
+a {
+  text-decoration: none;
+}
+
 #cart {
   position: absolute;
   top: 20px;
@@ -90,7 +94,7 @@ a {
   width: 80%;
   z-index: 3;
   border-radius: 5px;
-  border-top:solid #000
+  border-top: solid #000
 }
 
 #main-container {
@@ -230,7 +234,7 @@ a {
 
   }
 
-  #menu-div p {
+  .hover-target {
     display: none;
     background-color: #ffffff;
     width: 100%;
