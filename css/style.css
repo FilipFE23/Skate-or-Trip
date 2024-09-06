@@ -18,6 +18,10 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: black;
+}
+
 #main-container {
   border-bottom: solid 2px rgba(220, 202, 0, 0.758);
   border-top: solid 2px rgba(220, 202, 0, 0.758);

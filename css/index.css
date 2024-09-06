@@ -35,6 +35,10 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: black;
+}
+
 #cart {
   position: absolute;
   top: 20px;
