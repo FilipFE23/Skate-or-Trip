@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/admin.css">
-  <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet">
-  <script src="./js/main.js" defer></script>
-  <link rel="shortcut icon" href="#" type="image/x-icon">
-  <title>Document</title>
-</head>
-<body>
-  <header>
-    <h1><a href="index.html">Skate Or Trip</a></h1>
-    <nav id="logout">
-      <ul>
-        <li><a href="index.html">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div id="imgDiv">
-    <div class="imgContainer">
-      <label for="selected1"><img class="productImages" src="./images/skateboard.jpg" alt=""></label>
-      <input type="radio" name="selected" id="selected1">
-    </div>
-    <div class="imgContainer">
-      <label for="selected2"><img class="productImages" src="./images/stoney.jpeg" alt=""></label>
-      <input type="radio" name="selected" id="selected2">
-    </div>
-    <div class="imgContainer">
-      <label for="selected3"><img class="productImages" src="./images/vans.jpeg" alt=""></label>
-      <input type="radio" name="selected" id="selected3">
-    </div>
-  </div>
-  <div>
-    <div>
-      <label for="message">Product name:</label>
-      <input type="text" id="message" required>
-    </div>
-    <div>
-      <label for="message">Description:</label>
-      <input type="text" id="message" required>
-    </div>
-    <div>
-      <label for="message">Price:</label>
-      <input type="text" id="message" required>
-    </div>
-    <button>Submit</button>
-  </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/admin.css" />
+        <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet" />
+        <script src="./js/main.js" defer></script>
+        <link rel="shortcut icon" href="#" type="image/x-icon" />
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <h1><a id="title" href="index.html">Skate Or Trip</a></h1>
+            <nav id="logout">
+                <ul>
+                    <li><a id="logout-text" href="index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="imgDiv">
+            <div class="imgContainer">
+                <label for="selected1"><img class="productImages" src="./images/skateboard.jpg" alt="" /></label>
+                <input type="radio" name="selected" id="selected1" />
+            </div>
+            <div class="imgContainer">
+                <label for="selected2"><img class="productImages" src="./images/stoney.jpeg" alt="" /></label>
+                <input type="radio" name="selected" id="selected2" />
+            </div>
+            <div class="imgContainer">
+                <label for="selected3"><img class="productImages" src="./images/vans.jpeg" alt="" /></label>
+                <input type="radio" name="selected" id="selected3" />
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for="message">Product name:</label>
+                <input type="text" id="message" required />
+            </div>
+            <div>
+                <label for="message">Description:</label>
+                <input type="text" id="message" required />
+            </div>
+            <div>
+                <label for="message">Price:</label>
+                <input type="text" id="message" required />
+            </div>
+            <button>Submit</button>
+        </div>
+    </body>
 </html>
