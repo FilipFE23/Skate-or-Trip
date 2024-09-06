@@ -32,7 +32,8 @@ let inStock = [
     item: "shoes",
     gender: "women",
     name: "Vans deluxe",
-    description: "Vans is an American brand known for its skate-inspired shoes, especially the classic slip-ons and models. Founded in 1966, it’s a staple in skate and street culture.",
+    description:
+      "Vans is an American brand known for its skate-inspired shoes, especially the classic slip-ons and models. Founded in 1966, it’s a staple in skate and street culture.",
     price: "65$",
     img: "./images/vans.jpeg",
   },
@@ -40,7 +41,8 @@ let inStock = [
     item: "hoodie",
     gender: "men",
     name: "Psych hoodie",
-    description: "A hoodie is a casual sweatshirt with a hood, often featuring a front pocket and drawstrings. It's popular for its comfort and style, commonly worn in streetwear and sports.",
+    description:
+      "A hoodie is a casual sweatshirt with a hood, often featuring a front pocket and drawstrings. It's popular for its comfort and style, commonly worn in streetwear and sports.",
     price: "40$",
     img: "./images/stoney.jpeg",
   },
@@ -48,16 +50,16 @@ let inStock = [
     item: "hoodie",
     gender: "men",
     name: "Psych hoodie",
-    description: "A hoodie is a casual sweatshirt with a hood, often featuring a front pocket and drawstrings. It's popular for its comfort and style, commonly worn in streetwear and sports.",
+    description:
+      "A hoodie is a casual sweatshirt with a hood, often featuring a front pocket and drawstrings. It's popular for its comfort and style, commonly worn in streetwear and sports.",
     price: "40$",
     img: "./images/stoney.jpeg",
   },
 ];
 
-let menuMen = document.getElementById('men-menu');
-let menuWomen = document.getElementById('women-menu');
-let menuKids = document.getElementById('kids-menu');
-
+let menuMen = document.getElementById("men-menu");
+let menuWomen = document.getElementById("women-menu");
+let menuKids = document.getElementById("kids-menu");
 
 let container = document.getElementById("main-container");
 let counter = document.getElementById("number");
@@ -65,32 +67,25 @@ let dropDown = document.getElementById("dropdown");
 let close = document.getElementById("close");
 let menuDiv = document.getElementById("menu-div");
 
-
 let test = menuDiv.children[0];
 
 dropDown.addEventListener("click", () => {
   dropDown.style.display = "none";
-  close.style.display = "block"
+  close.style.display = "block";
   close.style.marginTop = "125px";
-
 
   for (let i = 8; i > 0; i--) {
     menuDiv.children[i].style.display = "block";
-
   }
-
 });
-
 
 close.addEventListener("click", () => {
   dropDown.style.display = "block";
-  close.style.display = "none"
+  close.style.display = "none";
   for (let i = 8; i > 0; i--) {
     menuDiv.children[i].style.display = "none";
-
   }
 });
-
 
 let count = 0;
 
@@ -122,7 +117,7 @@ function boxes(title, desc, image, price) {
 
   addNotButton.addEventListener("click", () => {
     purchaseMessage.style.display = "none";
-  })
+  });
 
   let buyButton = document.createElement("button");
   buyButton.innerText = "add to cart";
@@ -145,9 +140,10 @@ function boxes(title, desc, image, price) {
   });
 
   function timedMessage(addedImage) {
-    let otherProducts = inStock.filter(product => product.img !== addedImage);
+    let otherProducts = inStock.filter((product) => product.img !== addedImage);
 
-    let randomProduct = otherProducts[Math.floor(Math.random() * otherProducts.length)];
+    let randomProduct =
+      otherProducts[Math.floor(Math.random() * otherProducts.length)];
 
     purchaseMessage.innerHTML = "";
 
@@ -230,15 +226,15 @@ function displayStock(gender, item) {
 
 displayStock();
 
-menuMen.addEventListener('click', () => {
-  displayStock('men');
-})
-menuWomen.addEventListener('click', () => {
-  displayStock('women');
-})
-menuKids.addEventListener('click', () => {
-  displayStock('kids');
-})
+menuMen.addEventListener("click", () => {
+  displayStock("men");
+});
+menuWomen.addEventListener("click", () => {
+  displayStock("women");
+});
+menuKids.addEventListener("click", () => {
+  displayStock("kids");
+});
 
 // document.getElementById('men').addEventListener('click', () => {
 //   displayStock('men');
@@ -262,21 +258,21 @@ menuKids.addEventListener('click', () => {
 const hoverTargets = document.querySelectorAll(".hover-target");
 function createDiv(target) {
   const newDiv = document.createElement("div");
-  const tshirtP = document.createElement('p')
-  const jeansP = document.createElement('p')
-  const hoodiesP = document.createElement('p')
-  const beaniesP = document.createElement('p')
-  const kepsarP = document.createElement('p')
-  const sneakersP = document.createElement('p')
+  const tshirtP = document.createElement("p");
+  const jeansP = document.createElement("p");
+  const hoodiesP = document.createElement("p");
+  const beaniesP = document.createElement("p");
+  const kepsarP = document.createElement("p");
+  const sneakersP = document.createElement("p");
 
-  newDiv.append(tshirtP, jeansP, hoodiesP, beaniesP, kepsarP, sneakersP)
+  newDiv.append(tshirtP, jeansP, hoodiesP, beaniesP, kepsarP, sneakersP);
 
-  tshirtP.textContent = 'T-shirts';
-  jeansP.textContent = 'Jeans';
-  hoodiesP.textContent = 'Hoodies';
-  beaniesP.textContent = 'Beanies';
-  kepsarP.textContent = 'Kepsar';
-  sneakersP.textContent = 'Sneakers';
+  tshirtP.textContent = "T-shirts";
+  jeansP.textContent = "Jeans";
+  hoodiesP.textContent = "Hoodies";
+  beaniesP.textContent = "Beanies";
+  kepsarP.textContent = "Kepsar";
+  sneakersP.textContent = "Sneakers";
 
   newDiv.className = "created-div";
   newDiv.classList.add("newDivStyle");
@@ -288,9 +284,20 @@ function removeDiv(target) {
     target.removeChild(createdDiv);
   }
 }
+
 hoverTargets.forEach((target) => {
-  target.addEventListener("mouseover", () => createDiv(target));
-  target.addEventListener("mouseout", () => removeDiv(target));
+  target.addEventListener("mouseover", () => {
+    if (!target.querySelector(".created-div")) {
+      createDiv(target);
+    }
+  });
+});
+document.addEventListener("click", (event) => {
+  hoverTargets.forEach((target) => {
+    if (!target.contains(event.target)) {
+      removeDiv(target);
+    }
+  });
 });
 //////////////////////////// Abdulla /////////////////////////////////////
 
