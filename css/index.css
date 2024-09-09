@@ -14,6 +14,15 @@ header {
     width: 96%;
     margin-left: 2%;
 }
+
+#searchForm {
+    text-align: center;
+}
+
+#searchInput {
+    width: 30%;
+}
+
 #number {
     position: absolute;
     top: 0px;
@@ -108,6 +117,20 @@ a {
 }
 
 #main-container {
+    border-bottom: solid 2px rgba(220, 202, 0, 0.758);
+    border-top: solid 2px rgba(220, 202, 0, 0.758);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#search-container {
     border-bottom: solid 2px rgba(220, 202, 0, 0.758);
     border-top: solid 2px rgba(220, 202, 0, 0.758);
     padding-top: 20px;
