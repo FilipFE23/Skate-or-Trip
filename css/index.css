@@ -58,9 +58,13 @@ a {
 #login-text {
     position: absolute;
     top: 20px;
-    right: 100px;
+    right: 150px;
 }
-
+#whislisttop{
+        position: absolute;
+        top: 20px;
+        right: 80px;
+}
 #men-menu {
     cursor: pointer;
 }

@@ -65,11 +65,33 @@ ul p {
   display: inline-block;
 }
 
+#cart {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  cursor: pointer;
+}
+
+#login-text {
+  position: absolute;
+  top: 20px;
+  right: 150px;
+}
+#whislisttop{
+      position: absolute;
+      top: 20px;
+      right: 80px;
+}
+
 .form {
   max-width: 300px;
   margin: auto;
   padding: 20px;
   border-radius: 5px;
+  padding-bottom: 150px;
+  margin-top: 20px;
+  border-bottom: solid 2px rgba(220, 202, 0, 0.758);
+
 }
 
 #message {
@@ -127,4 +149,108 @@ ul p {
   background-color: blue;
   height: 100px;
   width: 100px;
+}
+
+#footerUpper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#lowerFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#companyInfo {
+  margin-left: 10%;
+  width: 30%;
+}
+
+#contactAndAdress {
+  margin-right: 10%;
+}
+
+#connect {
+  margin-left: 10%;
+}
+
+#socialMedia {
+  margin-right: 10%;
+}
+
+#socialMedia img {
+  width: 30px;
+}
+
+#footerUl li {
+  display: block;
+}
+
+#dropdown {
+  display: none;
+}
+
+#close {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .box {
+      width: 70%;
+      margin-left: auto;
+
+      margin-right: auto;
+  }
+
+  #dropdown {
+      display: block;
+  }
+}
+
+@media (min-width: 600px) {
+  #close {
+      display: none !important;
+  }
+
+  #dropdown {
+      display: none !important;
+  }
+
+  #menu-div p {
+      display: inline-block;
+  }
+}
+
+@media (max-width: 600px) {
+  .box {
+      width: 70%;
+      margin-left: auto;
+
+      margin-right: auto;
+  }
+
+  #dropdown {
+      display: block;
+      width: 40px;
+  }
+
+  #close {
+      display: none;
+      width: 30px;
+  }
+
+  #menu-div {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      z-index: 4;
+  }
+
+  .hover-target {
+      display: none;
+      background-color: #ffffff;
+      width: 100%;
+  }
 }
