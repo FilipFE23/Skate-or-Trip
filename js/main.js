@@ -1,3 +1,6 @@
+import { getProducts, getWishlist, postToWishlist } from "./fetch.js";
+
+
 //////////////////////////// YASIR & André/////////////////////////////////////
 
 let inStock = [
@@ -299,6 +302,12 @@ document.addEventListener("click", (event) => {
     }
   });
 });
+
+// getProducts();
+// getWishlist();
+postToWishlist();
+
+
 //////////////////////////// Abdulla /////////////////////////////////////
 
 //////////////////////////// Johanna /////////////////////////////////////
