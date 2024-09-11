@@ -29,6 +29,7 @@ let productCategory;
 export async function getProducts() {
     let response = await fetch(PRODUCT_URL);
     let data = await response.json();
+    return data;
     for (let productId in data) {
         // console.log("Product id:", productId);
         // console.log("Price:", data[productId].price);
@@ -40,15 +41,16 @@ export async function getProducts() {
 export async function getWishlist() {
     let response = await fetch(WISHLIST_URL);
     let data = await response.json();
-    for (let wishlistedProductId in data) {
-        console.log("product id inside wishlist id:", wishlistedProdId)
-        console.log("Category:", data[wishlistedProductId].category);
-        console.log("Price:", data[wishlistedProductId].price);
-        console.log("Product name:", data[wishlistedProductId].productname);
-        console.log("imgURl:", data[wishlistedProductId].img_url);
-        console.log("actual product id:", data[wishlistedProductId].productid)
-        console.log("Description: ", data[wishlistedProductId].description);
-    }
+    // for (let wishlistedProductId in data) {
+    //     console.log("product id inside wishlist id:", wishlistedProdId)
+    //     console.log("Category:", data[wishlistedProductId].category);
+    //     console.log("Price:", data[wishlistedProductId].price);
+    //     console.log("Product name:", data[wishlistedProductId].productname);
+    //     console.log("imgURl:", data[wishlistedProductId].img_url);
+    //     console.log("actual product id:", data[wishlistedProductId].productid)
+    //     console.log("Description: ", data[wishlistedProductId].description);
+    // }
+    return data;
 }
 
 export async function postToWishlist() {
@@ -71,3 +73,4 @@ export async function postToWishlist() {
     let data = await response.json();
     console.log(data);
 }
+
