@@ -53,7 +53,7 @@ export async function getWishlist() {
     return data;
 }
 
-export async function postToWishlist() {
+export async function postToWishlist(productId, productName, productCategory, productPrice, productDescription, productImg) {
     let productObject = {
         "productid": productId,
         "productname": productName,

@@ -267,20 +267,13 @@ function createDiv(target) {
   const newDiv = document.createElement("div");
   const tshirtP = document.createElement("p");
   const jeansP = document.createElement("p");
-  const hoodiesP = document.createElement("p");
-  const beaniesP = document.createElement("p");
-  const kepsarP = document.createElement("p");
   const sneakersP = document.createElement("p");
 
-  newDiv.append(tshirtP, jeansP, hoodiesP, beaniesP, kepsarP, sneakersP);
+  newDiv.append(tshirtP, jeansP, sneakersP);
 
   tshirtP.textContent = "T-shirts";
   jeansP.textContent = "Jeans";
-  hoodiesP.textContent = "Hoodies";
-  beaniesP.textContent = "Beanies";
-  kepsarP.textContent = "Kepsar";
   sneakersP.textContent = "Sneakers";
-
   newDiv.className = "created-div";
   newDiv.classList.add("newDivStyle");
   target.appendChild(newDiv);
