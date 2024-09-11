@@ -38,7 +38,7 @@ close.addEventListener("click", () => {
 let count = 0;
 
 
-function boxes(title, desc, image, price) {
+function boxes(title, desc, image, price, wishlistId) {
   let box = document.createElement("div");
   box.classList.add("box");
   let h2El = document.createElement("h2");
@@ -55,7 +55,17 @@ function boxes(title, desc, image, price) {
   priceEl.innerText = price;
 
   let wishlistButtonEl = document.createElement("button");
+  wishlistButtonEl.id = wishlistId
   wishlistButtonEl.innerText = 'add to wishlist';
+
+  wishlistButtonEl.addEventListener('click', async () => {
+    let productList = await getProducts();
+    for (let key in productList) {
+      if (wishlistId === key) {
+        await postToWishlist(wishlistId, productList[key].productname, productList[key].category, productList[key].price, productList[key].description, productList[key].img_url, productList[key].gender); 
+      }
+    }
+  });
 
   let addButton = document.createElement("button");
   addButton.innerHTML = "Yes";
@@ -286,17 +296,14 @@ function displayStock(gender, item) {
   container.innerHTML = "";
   getProducts().then(data => {
     for (const dat in data) {
-      if (
-        (!gender || data[dat].gender === gender) &&
-        (!item || data[dat].item === item)
-      ) {
+      if ((!gender || data[dat].gender === gender) && (!item || data[dat].item === item)) {
         boxes(
           data[dat].productname,
           data[dat].description,
           data[dat].img_url,
-          data[dat].price
+          data[dat].price,
+          dat
         )
-
       }
     }
   })
@@ -373,7 +380,7 @@ document.addEventListener("click", (event) => {
 
 // getProducts();
 // getWishlist();
-postToWishlist();
+// postToWishlist();
 
 
 //////////////////////////// Abdulla /////////////////////////////////////
