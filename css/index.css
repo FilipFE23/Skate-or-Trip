@@ -73,6 +73,11 @@ a {
         position: absolute;
         top: 20px;
         right: 80px;
+        background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
 }
 #men-menu {
     cursor: pointer;
@@ -317,7 +322,7 @@ html {
     border: 1px solid #ddd;
     padding: 10px;
     margin: 10px;
-    width: 300px;
+    width: 340px;
 }
 
 .wishlist-item img {
@@ -328,4 +333,14 @@ html {
 .wishlist-container {
     display: flex;
     flex-wrap: wrap;
+}
+
+.rainbow-text {
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
