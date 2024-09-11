@@ -41,7 +41,7 @@ export async function getWishlist() {
     let response = await fetch(WISHLIST_URL);
     let data = await response.json();
     for (let wishlistedProductId in data) {
-        console.log("product id inside wishlist id:", wishlistedProdId)
+        console.log("wishlisted product id:", wishlistedProductId)
         console.log("Category:", data[wishlistedProductId].category);
         console.log("Price:", data[wishlistedProductId].price);
         console.log("Product name:", data[wishlistedProductId].productname);
@@ -51,7 +51,7 @@ export async function getWishlist() {
     }
 }
 
-export async function postToWishlist() {
+export async function postToWishlist(productId, productName, productCategory, productPrice, productDescription, productImg) {
     let productObject = {
         "productid": productId,
         "productname": productName,
