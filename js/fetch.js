@@ -29,6 +29,7 @@ let productCategory;
 export async function getProducts() {
     let response = await fetch(PRODUCT_URL);
     let data = await response.json();
+    return data;
     for (let productId in data) {
         // console.log("Product id:", productId);
         // console.log("Price:", data[productId].price);

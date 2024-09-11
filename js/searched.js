@@ -1,3 +1,4 @@
+import { getProducts } from "./fetch.js";
 
 let inStock = [
   {
@@ -55,6 +56,7 @@ let inStock = [
     img: "./images/stoney.jpeg",
   },
 ];
+
 
 
 
@@ -173,21 +175,61 @@ function searchBoxes(title, desc, image, price) {
 
 
 
+// searchForm.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   searchContainer.innerHTML = " ";
+
+//   for (let item of inStock) {
+//     if (input.value === item.gender) {
+//       // console.log(item.name, input, item.gender);
+
+//       searchBoxes(
+//         item.name,
+//         item.description,
+//         item.img,
+//         item.price)
+//     }
+//   }
+
+
+// })
+
+// console.log("Product id:", productId);
+// console.log("Price:", data[productId].price);
+// console.log("Product name:", data[productId].productname);
+// console.log("Category:", data[productId].category);
+// console.log("ImgURL:", data[productId].img_url);
+
 searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
   searchContainer.innerHTML = " ";
-
-  for (let item of inStock) {
-    if (input.value === item.gender) {
-      console.log(item.name, input, item.gender);
-
+  getProducts().then(data => {
+    console.log(data);
+    for (const dat in data) {
+      console.log(data[dat].price);
       searchBoxes(
-        item.name,
-        item.description,
-        item.img,
-        item.price)
+        data[dat].productname,
+        data[dat].description,
+        data[dat].img_url,
+        data[dat].price
+      )
+
     }
-  }
+
+
+
+  })
+
+  // for (let item of inStock) {
+
+
+  //     searchBoxes(
+  //       item.name,
+  //       item.description,
+  //       item.img,
+  //       item.price)
+
+  // }
 
 
 })
