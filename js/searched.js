@@ -1,62 +1,5 @@
 import { getProducts } from "./fetch.js";
 
-let inStock = [
-  {
-    item: "skateboard",
-    gender: "men",
-    name: "Skateboard Pro Xtreme",
-    description:
-      "The Skateboard Pro Xtreme is the ultimate skateboard designed for riders of all skill levels, from beginners to seasoned pros. Built with high-quality materials and engineered for superior performance, this skateboard is perfect for those looking to enhance their skills and enjoy a smooth ride.",
-    price: "80$",
-    img: "./images/Rip-N-Dip-Psychedelic-Complete-Skateboard-Multi-3.jpg",
-  },
-  {
-    item: "skateboard",
-    gender: "women",
-    name: "Longboard Classic Wave Rider",
-    description:
-      "Discover the freedom of surfing the streets with the Longboard Classic Wave Rider - the perfect board for downhill racing, carving, and long-distance cruising. Crafted for stability and smoothness, this longboard is ideal for both novice and experienced riders looking for an exhilarating ride.",
-    price: "70$",
-    img: "./images/krooked-skateboards-sebo-walker-waves-skateboard-deck-8-25-p46621-115949_medium.jpg",
-  },
-  {
-    item: "skateboard",
-    gender: "kids",
-    name: "Cruiser Skateboard Urban Glide",
-    description:
-      "Meet the Cruiser Skateboard Urban Glide - your perfect companion for cruising the streets and commuting in style. Designed for a smooth, effortless ride, this cruiser skateboard is ideal for both beginners and experienced skaters looking for a versatile board that excels in both comfort and performance.",
-    price: "90$",
-    img: "./images/skateboard.jpg",
-  },
-  {
-    item: "shoes",
-    gender: "women",
-    name: "Vans deluxe",
-    description:
-      "Vans is an American brand known for its skate-inspired shoes, especially the classic slip-ons and models. Founded in 1966, it’s a staple in skate and street culture.",
-    price: "65$",
-    img: "./images/vans.jpeg",
-  },
-  {
-    item: "hoodie",
-    gender: "men",
-    name: "Psych hoodie",
-    description:
-      "A hoodie is a casual sweatshirt with a hood, often featuring a front pocket and drawstrings. It's popular for its comfort and style, commonly worn in streetwear and sports.",
-    price: "40$",
-    img: "./images/stoney.jpeg",
-  },
-  {
-    item: "hoodie",
-    gender: "men",
-    name: "Psych hoodie",
-    description:
-      "A hoodie is a casual sweatshirt with a hood, often featuring a front pocket and drawstrings. It's popular for its comfort and style, commonly worn in streetwear and sports.",
-    price: "40$",
-    img: "./images/stoney.jpeg",
-  },
-];
-
 
 
 
@@ -64,6 +7,19 @@ let searchForm = document.getElementById("searchForm");
 let searchContainer = document.getElementById("search-container");
 let formBtn = document.getElementById("formBtn");
 let input = document.getElementById("searchInput");
+
+
+let menuMen = document.getElementById("men-menu");
+let menuWomen = document.getElementById("women-menu");
+let menuKids = document.getElementById("kids-menu");
+
+let container = document.getElementById("main-container");
+let counter = document.getElementById("number");
+let dropDown = document.getElementById("dropdown");
+let close = document.getElementById("close");
+let menuDiv = document.getElementById("menu-div");
+
+let count = 0;
 
 
 function searchBoxes(title, desc, image, price) {
@@ -82,123 +38,111 @@ function searchBoxes(title, desc, image, price) {
   imgEl.src = image;
   priceEl.innerText = price;
 
-  // let addButton = document.createElement("button");
-  // addButton.innerHTML = "Yes";
+  let wishlistButtonEl = document.createElement("button");
+  wishlistButtonEl.innerText = 'add to wishlist';
 
-  // addButton.addEventListener("click", () => {
-  //   purchaseMessage.style.display = "none";
-  // });
+  let addButton = document.createElement("button");
+  addButton.innerHTML = "Yes";
 
-  // let addNotButton = document.createElement("button");
-  // addNotButton.innerHTML = "No";
+  addButton.addEventListener("click", () => {
+    purchaseMessage.style.display = "none";
+  });
 
-  // addNotButton.addEventListener("click", () => {
-  //   purchaseMessage.style.display = "none";
-  // });
+  let addNotButton = document.createElement("button");
+  addNotButton.innerHTML = "No";
 
-  // let buyButton = document.createElement("button");
-  // buyButton.innerText = "add to cart";
+  addNotButton.addEventListener("click", () => {
+    purchaseMessage.style.display = "none";
+  });
 
-  // let regretBuyButton = document.createElement("button");
-  // regretBuyButton.innerText = "remove from cart";
-  // let purchaseMessage = document.createElement("div");
+  let buyButton = document.createElement("button");
+  buyButton.innerText = "add to cart";
 
-  // buyButton.classList.add("buy");
-  // purchaseMessage.classList.add("purchase");
-  // regretBuyButton.classList.add("buy");
-  // regretBuyButton.style.display = "none";
+  let regretBuyButton = document.createElement("button");
+  regretBuyButton.innerText = "remove from cart";
+  let purchaseMessage = document.createElement("div");
 
-  // buyButton.addEventListener("click", () => {
-  //   count++;
-  //   counter.innerText = count;
-  //   buyButton.disabled = true;
-  //   regretBuyButton.style.display = "block";
-  //   timedMessage(title, image);
-  // });
+  buyButton.classList.add("buy");
+  purchaseMessage.classList.add("purchase");
+  regretBuyButton.classList.add("buy");
+  regretBuyButton.style.display = "none";
 
-  // function timedMessage(addedImage) {
-  //   let otherProducts = inStock.filter((product) => product.img !== addedImage);
+  buyButton.addEventListener("click", () => {
+    count++;
+    counter.innerText = count;
+    buyButton.disabled = true;
+    regretBuyButton.style.display = "block";
+    timedMessage(title, image);
+  });
+  function timedMessage(addedImage) {
+    let otherProducts;
+    getProducts().then(data => {
+      console.log("Fetched Data:", data);
 
-  //   let randomProduct =
-  //     otherProducts[Math.floor(Math.random() * otherProducts.length)];
+      // Convert the object to an array of values (products)
+      const productsArray = Object.values(data);
 
-  //   purchaseMessage.innerHTML = "";
+      // Filter out products based on the img_url value
+      otherProducts = productsArray.filter(product => product.img_url !== addedImage);
 
-  //   let addQuestion = document.createElement("p");
-  //   addQuestion.innerText = "Do you want to add this product?";
+      // Log each product's price after filtering
+      otherProducts.forEach(product => {
+        console.log("Price:", product.price);
+      });
 
-  //   let imgEl = document.createElement("img");
-  //   imgEl.classList.add("popup-img");
-  //   imgEl.src = randomProduct.img;
+      // Select a random product from the filtered products
+      let randomProduct = otherProducts[Math.floor(Math.random() * otherProducts.length)];
 
-  //   let h2El = document.createElement("h2");
-  //   h2El.innerHTML = randomProduct.name;
+      // Clear previous message
+      purchaseMessage.innerHTML = "";
 
-  //   purchaseMessage.append(imgEl);
-  //   purchaseMessage.append(h2El);
-  //   purchaseMessage.append(addQuestion);
+      // Create and add elements for the product message
+      let addQuestion = document.createElement("p");
+      addQuestion.innerText = "Do you want to add this product?";
 
-  //   purchaseMessage.append(addButton);
-  //   purchaseMessage.append(addNotButton);
+      let imgEl = document.createElement("img");
+      imgEl.classList.add("popup-img");
+      imgEl.src = randomProduct.img_url;  // Use img_url for the image source
 
-  //   purchaseMessage.style.display = "block";
-  // }
+      let h2El = document.createElement("h2");
+      h2El.innerHTML = randomProduct.name;
 
-  // regretBuyButton.addEventListener("click", () => {
-  //   if (count > 0) {
-  //     count--;
-  //     counter.innerText = count;
-  //     regretBuyButton.style.display = "none";
-  //     buyButton.disabled = false;
-  //   }
-  // });
+      // Append the elements to the message container
+      purchaseMessage.append(imgEl);
+      purchaseMessage.append(h2El);
+      purchaseMessage.append(addQuestion);
 
-  // box.append(
-  //   imgEl,
-  //   h2El,
-  //   pEl,
-  //   priceEl,
-  //   buyButton,
-  //   regretBuyButton,
-  //   purchaseMessage
-  // );
+      purchaseMessage.append(addButton);
+      purchaseMessage.append(addNotButton);
+
+      // Display the message
+      purchaseMessage.style.display = "block";
+    });
+  }
+
+  regretBuyButton.addEventListener("click", () => {
+    if (count > 0) {
+      count--;
+      counter.innerText = count;
+      regretBuyButton.style.display = "none";
+      buyButton.disabled = false;
+    }
+  });
 
   box.append(
     imgEl,
     h2El,
     pEl,
-    priceEl
+    priceEl,
+    wishlistButtonEl,
+    buyButton,
+    regretBuyButton,
+    purchaseMessage
   );
   searchContainer.append(box);
+
 }
 
-
-
-
-// searchForm.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   searchContainer.innerHTML = " ";
-
-//   for (let item of inStock) {
-//     if (input.value === item.gender) {
-//       // console.log(item.name, input, item.gender);
-
-//       searchBoxes(
-//         item.name,
-//         item.description,
-//         item.img,
-//         item.price)
-//     }
-//   }
-
-
-// })
-
-// console.log("Product id:", productId);
-// console.log("Price:", data[productId].price);
-// console.log("Product name:", data[productId].productname);
-// console.log("Category:", data[productId].category);
-// console.log("ImgURL:", data[productId].img_url);
 
 searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -207,6 +151,7 @@ searchForm.addEventListener("submit", (event) => {
     console.log(data);
     for (const dat in data) {
       console.log(data[dat].price);
+
       searchBoxes(
         data[dat].productname,
         data[dat].description,
@@ -219,17 +164,5 @@ searchForm.addEventListener("submit", (event) => {
 
 
   })
-
-  // for (let item of inStock) {
-
-
-  //     searchBoxes(
-  //       item.name,
-  //       item.description,
-  //       item.img,
-  //       item.price)
-
-  // }
-
 
 })
