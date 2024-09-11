@@ -30,13 +30,13 @@ export async function getProducts() {
     let response = await fetch(PRODUCT_URL);
     let data = await response.json();
     return data;
-    for (let productId in data) {
-        // console.log("Product id:", productId);
-        // console.log("Price:", data[productId].price);
-        // console.log("Product name:", data[productId].productname);
-        // console.log("Category:", data[productId].category);
-        // console.log("ImgURL:", data[productId].img_url);
-    }
+    // for (let productId in data) {
+    //     // console.log("Product id:", productId);
+    //     // console.log("Price:", data[productId].price);
+    //     // console.log("Product name:", data[productId].productname);
+    //     // console.log("Category:", data[productId].category);
+    //     // console.log("ImgURL:", data[productId].img_url);
+    // }
 }
 export async function getWishlist() {
     let response = await fetch(WISHLIST_URL);
