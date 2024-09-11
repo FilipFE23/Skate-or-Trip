@@ -107,6 +107,9 @@ function boxes(title, desc, image, price) {
   pEl.innerText = desc;
   imgEl.src = image;
   priceEl.innerText = price;
+  
+  let wishlistButtonEl = document.createElement("button");
+  wishlistButtonEl.innerText = 'add to wishlist';
 
   let addButton = document.createElement("button");
   addButton.innerHTML = "Yes";
@@ -184,6 +187,7 @@ function boxes(title, desc, image, price) {
     h2El,
     pEl,
     priceEl,
+    wishlistButtonEl,
     buyButton,
     regretBuyButton,
     purchaseMessage
