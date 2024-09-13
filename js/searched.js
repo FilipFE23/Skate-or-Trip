@@ -148,17 +148,23 @@ searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
   searchContainer.innerHTML = " ";
   getProducts().then(data => {
-    console.log(data);
+    const inputLowerCase = input.value.toLowerCase();;
+
+
     for (const dat in data) {
-      console.log(data[dat].price);
+      console.log(data[dat].productname);
+      const productNameLowerCase = data[dat].productname.toLowerCase();
 
-      searchBoxes(
-        data[dat].productname,
-        data[dat].description,
-        data[dat].img_url,
-        data[dat].price
-      )
+      if (productNameLowerCase.includes(inputLowerCase)) {
 
+
+        searchBoxes(
+          data[dat].productname,
+          data[dat].description,
+          data[dat].img_url,
+          data[dat].price
+        )
+      }
     }
 
 
